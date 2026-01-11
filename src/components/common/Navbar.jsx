@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../../../public/Logo.png'
 import { NavLink } from 'react-router'
 import { FiHeart } from 'react-icons/fi'
+import { PiUser, PiUserLight } from 'react-icons/pi'
 const Navbar = () => {
     return (
         <>
@@ -12,13 +13,13 @@ const Navbar = () => {
                         <div className='w-32'><img src={logo} alt="Rexify Logo" /></div>
 
                         {/* ------------ NavLinks  */}
-                        <div className='flex items-center gap-4'>
-                            <NavLink to={'/'}>Home</NavLink>
-                            <NavLink to={'/'}>Products</NavLink>
-                            <NavLink to={'/'}>Categories</NavLink>
-                            <NavLink to={'/'}>About</NavLink>
-                            <NavLink to={'/'}>Contact</NavLink>
-                            <NavLink to={'/'}>Support</NavLink>
+                        <div className='flex items-center'>
+                            <NavLink className={`navLinkHover`} to={'/'}>Home <span></span></NavLink>
+                            <NavLink className={`navLinkHover`} to={'/'}>Products <span></span></NavLink>
+                            <NavLink className={`navLinkHover`} to={'/'}>Categories <span></span></NavLink>
+                            <NavLink className={`navLinkHover`} to={'/'}>About <span></span></NavLink>
+                            <NavLink className={`navLinkHover`} to={'/'}>Contact <span></span></NavLink>
+                            <NavLink className={`navLinkHover`} to={'/'}>Support <span></span></NavLink>
                         </div>
 
                         {/* ------------ NavButtons  */}
@@ -47,6 +48,11 @@ const Navbar = () => {
                             {/* --------- Favorites  */}
                             <div className='w-8 h-8 flex items-center justify-center hover:bg-border/30 text-xl rounded-full cursor-pointer relative'>
                                 <FiHeart />
+                            </div>
+
+                            {/* --------- User  */}
+                            <div className='w-8 h-8 flex items-center justify-center hover:bg-border/30 text-xl rounded-full cursor-pointer relative'>
+                               <PiUser />
                             </div>
                         </div>
 

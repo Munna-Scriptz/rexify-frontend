@@ -5,7 +5,102 @@ body{
 }
 /* ------------------------- All css ------------------------ */
 
+.navLinkHover {
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: 0.3s ease-out;
+  text-decoration: none;
+  color: inherit;
+}
 
+/* Outer Corners (Top-Right and Bottom-Left) */
+.navLinkHover:before {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-right: 2px solid var(--color-accent);
+  border-top: 2px solid var(--color-accent);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.navLinkHover:after {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-left: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+/* Inner Corners (Top-Left and Bottom-Right) */
+.navLinkHover span:before {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top: 2px solid var(--color-muted);
+  border-left: 2px solid var(--color-muted);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.navLinkHover span:after {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-right: 2px solid var(--color-muted);
+  border-bottom: 2px solid var(--color-muted);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+/* Hover States - Moving corners inward */
+.navLinkHover:hover {
+  color: var(--color-text-muted);
+}
+
+.navLinkHover:hover:before {
+  opacity: 1;
+  right: 5px;
+  top: 5px;
+}
+
+.navLinkHover:hover:after {
+  opacity: 1;
+  left: 5px;
+  bottom: 5px;
+}
+
+.navLinkHover:hover span:before {
+  opacity: 1;
+  left: 5px;
+  top: 5px;
+}
+
+.navLinkHover:hover span:after {
+  opacity: 1;
+  right: 5px;
+  bottom: 5px;
+}
 
 
 
