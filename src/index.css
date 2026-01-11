@@ -24,6 +24,36 @@
   }
 }
 
+:root {
+  /* ================= Fonts ================= */
+  --font-primary: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Big Shoulders Display", system-ui, sans-serif;
+
+  /* ================= Base ================= */
+  --color-bg: #ffffff;
+  --color-surface: #f7f8fa;        /* cards / sections */
+  --color-muted: #eef0f3;          /* subtle backgrounds */
+
+  /* ================= Text ================= */
+  --color-text-primary: #0f0f10;   /* main text */
+  --color-text-secondary: #6b6f76; /* secondary text */
+  --color-text-muted: #9aa0a6;     /* hints */
+
+  /* ================= Borders ================= */
+  --color-border: #e4e6eb;         /* soft, clean borders */
+
+  /* ================= Brand ================= */
+  --color-brand: #111111;          /* Rexify black */
+  --color-accent: #6f7cff;         /* futuristic blue glow */
+  --color-accent-soft: #e9ecff;    /* hover / bg */
+
+  /* ================= Status ================= */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+}
+
+
 
 
 /* ------------------------- Common css ---------------------- */
