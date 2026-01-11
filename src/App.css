@@ -1,6 +1,7 @@
 /* ------------------------- Common css ------------------------ */
 body{
     font-family: var(--font-primary);
+    color: var(--color-surface);
 }
 /* ------------------------- All css ------------------------ */
 
