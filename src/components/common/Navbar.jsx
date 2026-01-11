@@ -2,29 +2,51 @@ import React from 'react'
 import logo from '../../../public/Logo.png'
 import { NavLink } from 'react-router'
 const Navbar = () => {
-  return (
-    <>
-        <nav className='bg-black py-3'> 
-            <div className="container">
-                <div id='Navbar-Row' className='flex items-center justify-between text-white'>
-                    {/* ------------ Image  */}
-                    <div className='w-[120px]'><img src={logo} alt="Rexify Logo" /></div>
+    return (
+        <>
+            <nav className='bg-black/60 py-3'>
+                <div className="container">
+                    <div id='Navbar-Row' className='flex items-center justify-between text-white'>
+                        {/* ------------ Image  */}
+                        <div className='w-32'><img src={logo} alt="Rexify Logo" /></div>
 
-                    {/* ------------ NavLinks  */}
-                    <div>
-                        <NavLink to={'/'}>Home</NavLink>
+                        {/* ------------ NavLinks  */}
+                        <div className='flex items-center gap-4'>
+                            <NavLink to={'/'}>Home</NavLink>
+                            <NavLink to={'/'}>Products</NavLink>
+                            <NavLink to={'/'}>Categories</NavLink>
+                            <NavLink to={'/'}>About</NavLink>
+                            <NavLink to={'/'}>Contact</NavLink>
+                            <NavLink to={'/'}>Support</NavLink>
+                        </div>
+
+                        {/* ------------ NavButtons  */}
+                        <div className='border-l border-gray-300 pl-3 flex items-center gap-3'>
+                            {/* ------- Search  */}
+                            <div className='flex items-center rounded-2xl relative group'>
+                                <label htmlFor='search' className='w-8 h-8 bg-transparent cursor-pointer group-hover:bg-border/30 flex items-center justify-center rounded-full absolute left-0'>
+                                    <svg className='w-6' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="#fff" d="M9.864 3.081A1.56 1.56 0 0 0 9 4.471c0 .275.079.553.215.799a6 6 0 1 0 7.66 6.948a.5.5 0 0 1 .105.183c.235.743.49 1.61 1.418 1.647a8 8 0 0 1-1.126 1.919l4.426 4.317a1 1 0 0 1-1.396 1.432l-4.46-4.348A8 8 0 1 1 9.864 3.081M18.484 8a.3.3 0 0 1 .285.201l.25.766a1.58 1.58 0 0 0 .999.998l.765.248l.015.004a.304.304 0 0 1 .146.46a.3.3 0 0 1-.146.11l-.765.248a1.58 1.58 0 0 0-.999.998l-.249.766a.303.303 0 0 1-.57 0l-.25-.766a1.58 1.58 0 0 0-.998-1.002l-.765-.248a.304.304 0 0 1-.146-.46a.3.3 0 0 1 .146-.11l.765-.248a1.58 1.58 0 0 0 .984-.998L18.2 8.2a.3.3 0 0 1 .284-.2m-4.011-8a.545.545 0 0 1 .512.363l.449 1.376a2.84 2.84 0 0 0 1.797 1.797l1.378.447l.028.007a.55.55 0 0 1 .363.514a.54.54 0 0 1-.363.513l-1.378.447A2.84 2.84 0 0 0 15.46 7.26l-.447 1.376L15 8.67a.545.545 0 0 1-1.014-.034L13.54 7.26a2.84 2.84 0 0 0-1.798-1.804l-1.378-.447A.55.55 0 0 1 10 4.496a.54.54 0 0 1 .363-.513l1.378-.447A2.84 2.84 0 0 0 13.5 1.773l.012-.034l.447-1.376A.55.55 0 0 1 14.473 0"></path>
+                                    </svg>
+                                </label>
+                                <input className='w-30 pl-10 h-8 outline-none rounded-full hover:bg-border/30 appearance-none [&::-webkit-search-cancel-button]:appearance-none' type="search" id='search' name='search' aria-label='search' placeholder='Search' />
+                            </div>
+                            {/* --------- Cart  */}
+                            <div className='w-8 h-8 flex items-center justify-center hover:bg-border/30 rounded-full cursor-pointer relative'>
+
+                                <svg className='w-6' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="#fff" fillRule="evenodd" d="M1.289 2.763a.75.75 0 0 1 .948-.475l.265.089l.04.013c.626.209 1.155.385 1.572.579c.442.206.826.46 1.117.865c.291.403.412.848.467 1.333c.052.456.052 1.014.052 1.674V9.5c0 1.435.002 2.437.103 3.192c.099.734.28 1.122.556 1.399c.277.277.666.457 1.4.556c.755.101 1.756.103 3.191.103h7a.75.75 0 0 1 0 1.5h-7.055c-1.367 0-2.47 0-3.337-.116c-.9-.122-1.658-.38-2.26-.982s-.86-1.36-.981-2.26c-.117-.867-.117-1.97-.117-3.337V6.883c0-.713 0-1.185-.042-1.546c-.04-.342-.107-.506-.194-.626c-.086-.12-.221-.237-.533-.382c-.33-.153-.777-.304-1.453-.53l-.265-.087a.75.75 0 0 1-.474-.95" clipRule="evenodd"></path>
+                                    <path fill="#fff" d="M5.745 6q.006.39.005.841V9.5c0 1.435.002 2.437.103 3.192q.023.165.05.308h10.12c.959 0 1.438 0 1.814-.248s.565-.688.942-1.57l.43-1c.809-1.89 1.213-2.834.769-3.508S18.506 6 16.45 6z" opacity={0.5}></path>
+                                    <path fill="#fff" d="M7.25 9A.75.75 0 0 1 8 8.25h3a.75.75 0 0 1 0 1.5H8A.75.75 0 0 1 7.25 9m.25 9a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3M18 19.5a1.5 1.5 0 1 0-3 0a1.5 1.5 0 0 0 3 0"></path>
+                                </svg>
+                            </div>
+                        </div>
+
                     </div>
-
-                    {/* ------------ NavButtons  */}
-                    <div>
-
-                    </div>
-
                 </div>
-            </div>
-        </nav>
-    </>
-  )
+            </nav>
+        </>
+    )
 }
 
 export default Navbar
