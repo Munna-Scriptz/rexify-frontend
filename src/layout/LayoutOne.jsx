@@ -1,10 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router'
+import Navbar from '../components/common/Navbar'
 
 const LayoutOne = () => {
   return (
     <>
-        <Outlet />
+      <Navbar />
+      <Outlet />
     </>
   )
 }
