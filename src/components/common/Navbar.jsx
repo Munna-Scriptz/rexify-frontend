@@ -1,38 +1,49 @@
 import React from 'react'
 import logo from '../../assets/Logo.png'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
 import { FiHeart } from 'react-icons/fi'
-import { PiUser, PiUserLight } from 'react-icons/pi'
+import { PiUser } from 'react-icons/pi'
 
 const Navbar = () => {
+    // ----------------------- Navbar scroll 
+    var ScrollProps = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (ScrollProps > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-100px";
+        }
+        ScrollProps = currentScrollPos;
+    }
     return (
         <>
-            <nav className='bg-black/60 py-3'>
+            <nav id='navbar' className='py-3 sticky top-0 duration-300 z-10'>
                 <div className="container">
                     <div id='Navbar-Row' className='flex items-center justify-between text-white'>
                         {/* ------------ Image  */}
-                        <div className='w-32'><img src={logo} alt="Rexify Logo" /></div>
+                        <Link to={'/'} className='w-32'><img src={logo} alt="Rexify Logo" /></Link>
 
                         {/* ------------ NavLinks  */}
                         <div className='flex items-center gap-6'>
-                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Home</NavLink>
-                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Products</NavLink>
-                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Categories</NavLink>
-                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>About</NavLink>
-                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Contact</NavLink>
-                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Support</NavLink>
+                            <NavLink className={`navLinkHover hover:text-text-primary duration-300`} to={'/'}>Home</NavLink>
+                            <NavLink className={`navLinkHover hover:text-text-primary duration-300`} to={'/'}>Products</NavLink>
+                            <NavLink className={`navLinkHover hover:text-text-primary duration-300`} to={'/'}>Categories</NavLink>
+                            <NavLink className={`navLinkHover hover:text-text-primary duration-300`} to={'/'}>About</NavLink>
+                            <NavLink className={`navLinkHover hover:text-text-primary duration-300`} to={'/'}>Contact</NavLink>
+                            <NavLink className={`navLinkHover hover:text-text-primary duration-300`} to={'/'}>Support</NavLink>
                         </div>
 
                         {/* ------------ NavButtons  */}
                         <div className='border-l border-gray-300 pl-3 flex items-center gap-2'>
                             {/* ------- Search  */}
                             <div className='flex items-center rounded-2xl relative group'>
-                                <label htmlFor='search' className='w-8 h-8 bg-transparent cursor-pointer group-hover:bg-border/30 flex items-center justify-center rounded-full absolute left-0'>
+                                <label htmlFor='search' className='w-8 h-8 bg-transparent cursor-pointer group-hover:bg-border/30 flex duration-300 items-center justify-center rounded-full absolute left-0'>
                                     <svg className='w-6' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                         <path fill="#fff" d="M9.864 3.081A1.56 1.56 0 0 0 9 4.471c0 .275.079.553.215.799a6 6 0 1 0 7.66 6.948a.5.5 0 0 1 .105.183c.235.743.49 1.61 1.418 1.647a8 8 0 0 1-1.126 1.919l4.426 4.317a1 1 0 0 1-1.396 1.432l-4.46-4.348A8 8 0 1 1 9.864 3.081M18.484 8a.3.3 0 0 1 .285.201l.25.766a1.58 1.58 0 0 0 .999.998l.765.248l.015.004a.304.304 0 0 1 .146.46a.3.3 0 0 1-.146.11l-.765.248a1.58 1.58 0 0 0-.999.998l-.249.766a.303.303 0 0 1-.57 0l-.25-.766a1.58 1.58 0 0 0-.998-1.002l-.765-.248a.304.304 0 0 1-.146-.46a.3.3 0 0 1 .146-.11l.765-.248a1.58 1.58 0 0 0 .984-.998L18.2 8.2a.3.3 0 0 1 .284-.2m-4.011-8a.545.545 0 0 1 .512.363l.449 1.376a2.84 2.84 0 0 0 1.797 1.797l1.378.447l.028.007a.55.55 0 0 1 .363.514a.54.54 0 0 1-.363.513l-1.378.447A2.84 2.84 0 0 0 15.46 7.26l-.447 1.376L15 8.67a.545.545 0 0 1-1.014-.034L13.54 7.26a2.84 2.84 0 0 0-1.798-1.804l-1.378-.447A.55.55 0 0 1 10 4.496a.54.54 0 0 1 .363-.513l1.378-.447A2.84 2.84 0 0 0 13.5 1.773l.012-.034l.447-1.376A.55.55 0 0 1 14.473 0"></path>
                                     </svg>
                                 </label>
-                                <input className='w-30 pl-10 h-8 outline-none rounded-full hover:bg-border/30 appearance-none [&::-webkit-search-cancel-button]:appearance-none' type="search" id='search' name='search' aria-label='search' placeholder='Search' />
+                                <input className='w-30 pl-10 h-8 outline-none rounded-full hover:bg-border/30 appearance-none duration-300 [&::-webkit-search-cancel-button]:appearance-none' type="search" id='search' name='search' aria-label='search' placeholder='Search' />
                             </div>
                             {/* --------- Cart  */}
                             <div className='w-8 h-8 flex items-center justify-center hover:bg-border/30 rounded-full cursor-pointer relative'>
@@ -53,7 +64,7 @@ const Navbar = () => {
 
                             {/* --------- User  */}
                             <div className='w-8 h-8 flex items-center justify-center hover:bg-border/30 text-xl rounded-full cursor-pointer relative'>
-                               <PiUser />
+                                <PiUser />
                             </div>
                         </div>
 
