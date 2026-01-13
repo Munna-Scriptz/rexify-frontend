@@ -4,7 +4,7 @@ const variants = {
     px-[24px] py-[8px]
     text-base font-semibold uppercase
     text-surface
-    border-2 border-surface
+    border border-surface
     rounded-[34px]
     transition-all duration-300
     [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]
