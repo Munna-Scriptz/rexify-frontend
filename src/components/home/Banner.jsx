@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../ui/Button';
 
 const Banner = () => {
     return (
@@ -9,7 +10,7 @@ const Banner = () => {
                     <div className='absolute top-35 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center'>
                         <h1 className='text-5xl text-white font-semibold text-center mb-3'>NASync DH2300</h1>
                         <p className='text-center text-lg mb-3'>Smart Storage Made Simple</p>
-                        <button className='uppercase Banner-Hover'>Learn more</button>
+                        <Button variant="primary" className='uppercase'>Learn More</Button>
                     </div>
                     {/* ----------------- Video  */}
                     <video
