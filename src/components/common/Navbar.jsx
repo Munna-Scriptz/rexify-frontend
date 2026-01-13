@@ -1,8 +1,9 @@
 import React from 'react'
-import logo from '../../../public/Logo.png'
+import logo from '../../assets/Logo.png'
 import { NavLink } from 'react-router'
 import { FiHeart } from 'react-icons/fi'
 import { PiUser, PiUserLight } from 'react-icons/pi'
+
 const Navbar = () => {
     return (
         <>
@@ -13,13 +14,13 @@ const Navbar = () => {
                         <div className='w-32'><img src={logo} alt="Rexify Logo" /></div>
 
                         {/* ------------ NavLinks  */}
-                        <div className='flex items-center'>
-                            <NavLink className={`navLinkHover`} to={'/'}>Home <span></span></NavLink>
-                            <NavLink className={`navLinkHover`} to={'/'}>Products <span></span></NavLink>
-                            <NavLink className={`navLinkHover`} to={'/'}>Categories <span></span></NavLink>
-                            <NavLink className={`navLinkHover`} to={'/'}>About <span></span></NavLink>
-                            <NavLink className={`navLinkHover`} to={'/'}>Contact <span></span></NavLink>
-                            <NavLink className={`navLinkHover`} to={'/'}>Support <span></span></NavLink>
+                        <div className='flex items-center gap-6'>
+                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Home</NavLink>
+                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Products</NavLink>
+                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Categories</NavLink>
+                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>About</NavLink>
+                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Contact</NavLink>
+                            <NavLink className={`navLinkHover hover:text-accent`} to={'/'}>Support</NavLink>
                         </div>
 
                         {/* ------------ NavButtons  */}
