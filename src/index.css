@@ -28,7 +28,7 @@
 
   /* ================= Brand ================= */
   --color-brand: #111111;          /* Rexify black */
-  --color-accent: #6f7cff;         /* futuristic blue glow */
+  --color-accent: rgb(193,163,98);         /* futuristic blue glow */
   --color-accent-soft: #e9ecff;    /* hover / bg */
 
   /* ================= Status ================= */
