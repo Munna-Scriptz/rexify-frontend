@@ -3,7 +3,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { VideoSlide } from './VideoSlide';
-// --- 2. Main Banner Component ---
+
+import video2 from '../../assets/sliderVideo2.webm'
+
 const Banner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [progress, setProgress] = useState(0);
@@ -33,14 +35,14 @@ const Banner = () => {
         {
             header: 'Next Gen Speed',
             text: 'Fast, Secure, Reliable',
-            source: 'https://www.ugreen.com/cdn/shop/videos/c/vp/165681dd494845aa97d6cdc2e8b7118c/165681dd494845aa97d6cdc2e8b7118c.HD-1080p-7.2Mbps-60442324.mp4',
+            source: video2,
             poster: 'https://www.ugreen.com/cdn/shop/files/preview_images/165681dd494845aa97d6cdc2e8b7118c.thumbnail.0000000000.jpg?v=1761028855',
         },
         {
             header: 'Next Gen Speed',
             text: 'Fast, Secure, Reliable',
-            source: 'https://www.ugreen.com/cdn/shop/videos/c/vp/165681dd494845aa97d6cdc2e8b7118c/165681dd494845aa97d6cdc2e8b7118c.HD-1080p-7.2Mbps-60442324.mp4',
-            poster: 'https://www.ugreen.com/cdn/shop/files/preview_images/165681dd494845aa97d6cdc2e8b7118c.thumbnail.0000000000.jpg?v=1761028855',
+            source: '//www.ugreen.com/cdn/shop/videos/c/vp/e1db20f11eb44eba84c0a166de328998/e1db20f11eb44eba84c0a166de328998.HD-1080p-7.2Mbps-58219116.mp4?v=0',
+            poster: '//www.ugreen.com/cdn/shop/files/preview_images/e1db20f11eb44eba84c0a166de328998.thumbnail.0000000000.jpg?v=1758780954&amp;width=3840',
         },
     ];
 
