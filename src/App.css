@@ -2,6 +2,7 @@
 body{
     font-family: var(--font-primary);
     color: var(--color-surface);
+	background-color: #212121;
 }
 /* ------------------------- All css ------------------------ */
 .navLinkHover {
