@@ -28,8 +28,8 @@
 
   /* ================= Brand ================= */
   --color-brand: #111111;          /* Rexify black */
-  --color-accent: rgb(193,163,98);         /* futuristic blue glow */
-  --color-accent-soft: #e9ecff;    /* hover / bg */
+  --color-accent: #155dfc ;
+  --color-accent-soft: #E9ECFF;
 
   /* ================= Status ================= */
   --color-success: #16a34a;

@@ -25,7 +25,7 @@ export const VideoSlide = ({ item, isActive, onVideoEnd }) => {
     }, [isActive]);
 
     return (
-        <div className='relative w-full h-screen outline-none'>
+        <div className='relative w-full h-screen'>
             {/* Text Overlay */}
             <div className='absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center w-full max-w-4xl px-4'>
                 <h1 className='text-5xl text-white font-semibold text-center mb-3 drop-shadow-lg'>
