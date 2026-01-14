@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import { VideoSlide } from './VideoSlide';
 
 import video2 from '../../assets/sliderVideo2.webm'
+import video2Thumb from '../../assets/video2Thumbnail.png'
 
 const Banner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -36,7 +37,7 @@ const Banner = () => {
             header: 'Next Gen Speed',
             text: 'Fast, Secure, Reliable',
             source: video2,
-            poster: 'https://www.ugreen.com/cdn/shop/files/preview_images/165681dd494845aa97d6cdc2e8b7118c.thumbnail.0000000000.jpg?v=1761028855',
+            poster: video2Thumb,
         },
         {
             header: 'Next Gen Speed',
