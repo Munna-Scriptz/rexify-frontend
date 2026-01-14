@@ -4,12 +4,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { VideoSlide } from './VideoSlide';
 
-// import video1 from '../../assets/sliderVideo1.webm'
+import video1 from '../../assets/sliderVideo1.webm'
 import video2 from '../../assets/sliderVideo2.webm'
 import video3 from '../../assets/sliderVideo3.webm'
 import video1Thumb from '../../assets/video1Thumbnail.png'
 import video2Thumb from '../../assets/video2Thumbnail.png'
-// import video3Thumb from '../../assets/video3Thumbnail.png'
+import video3Thumb from '../../assets/video3Thumbnail.png'
 
 const Banner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,7 +34,7 @@ const Banner = () => {
         {
             header: 'NASync DH2300',
             text: 'Smart Storage Made Simple',
-            source: 'https://www.ugreen.com/cdn/shop/videos/c/vp/165681dd494845aa97d6cdc2e8b7118c/165681dd494845aa97d6cdc2e8b7118c.HD-1080p-7.2Mbps-60442324.mp4',
+            source: video1,
             poster: video1Thumb,
         },
         {
@@ -47,7 +47,7 @@ const Banner = () => {
             header: 'Next Gen Speed',
             text: 'Fast, Secure, Reliable',
             source: video3,
-            poster: '//www.ugreen.com/cdn/shop/files/preview_images/e1db20f11eb44eba84c0a166de328998.thumbnail.0000000000.jpg?v=1758780954&amp;width=3840',
+            poster: video3Thumb
         },
     ];
 
