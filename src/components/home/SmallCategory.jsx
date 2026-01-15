@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Slider from 'react-slick';
 
 const SmallCategory = () => {
@@ -17,14 +17,45 @@ const SmallCategory = () => {
 
     // ------------- Slider 
     const settings = {
-        arrows:false,
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "380px",
-        slidesToShow: 3,
+        arrows: true,
+        infinite: false,
         speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "360px",
+        nextArrow: <ChevronRight />,
+        prevArrow: <ChevronLeft />,
     };
+
+    function ChevronRight({ onClick }) {
+        return (
+            <button
+                onClick={onClick}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10
+                 h-12 w-12 text-xl rounded-full bg-gray-400/20 text-text-primary cursor-pointer shadow-lg
+                 flex items-center justify-center
+                 hover:scale-105 transition"
+            >
+                ❯
+            </button>
+        );
+    }
+
+    function ChevronLeft({ onClick }) {
+        return (
+            <button
+                onClick={onClick}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10
+                 h-12 w-12 text-xl rounded-full bg-gray-400/20 text-text-primary cursor-pointer shadow-lg
+                 flex items-center justify-center
+                 hover:scale-105 transition"
+            >
+                ❮
+            </button>
+        );
+    }
+
 
     return (
         <section className="bg-[#F5F5F7] mt-28">

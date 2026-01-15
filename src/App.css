@@ -96,3 +96,8 @@ body{
   scrollbar-width: thin;
   scrollbar-color: var(--color-accent) var(--color-surface);
 }
+
+
+.slick-list {
+  padding-left: 0px !important;
+}
