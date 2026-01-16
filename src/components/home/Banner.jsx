@@ -64,7 +64,7 @@ const Banner = () => {
     };
 
     return (
-        <section className='h-screen'>
+        <section id='Banner' className='h-screen'>
             <div id="Banner-Row" className='w-full h-screen absolute top-0 left-0'>
                 <Slider ref={sliderRef} {...settings} >
                     {videoContent.map((item, i) => (
