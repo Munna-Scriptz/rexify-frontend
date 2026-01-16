@@ -23,17 +23,18 @@ const servicesItem = [
     }
 ];
 
-const Services = () => {
+const 
+Services = () => {
     return (
         <section className="bg-white border-b border-zinc-100">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="container">
 
                 {/* Section Header */}
-                <div className="text-center max-w-3xl mx-auto mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 font-display">
-                        The <span className="text-blue-600">Rexify</span> Standard
+                <div className="text-center mb-15 flex justify-between">
+                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-text-primary font-display">
+                        The <span className="text-blue-600">Rexify</span> <p className="text-5xl text-left mt-2">Standard</p> 
                     </h2>
-                    <p className="mt-4 text-zinc-500 text-lg font-medium leading-relaxed">
+                    <p className="mt-4 text-text-muted text-lg font-medium leading-relaxed max-w-lg text-right">
                         We don't just sell tech; we curate a premium experience. 
                         Built for speed, trust, and the future.
                     </p>
@@ -57,18 +58,12 @@ const Services = () => {
                             <div className="absolute inset-0 bg-zinc-50 opacity-0 group-hover:opacity-50 rounded-2xl transition-opacity duration-300 -z-10" />
 
                             {/* Icon - Minimal & Clean */}
-                            <div className="
-                                w-12 h-12 flex items-center justify-center 
-                                rounded-lg bg-zinc-50 border border-zinc-100
-                                text-zinc-900 mb-6
-                                group-hover:scale-110 group-hover:bg-blue-50 group-hover:text-blue-600
-                                transition-all duration-300
-                            ">
-                                <item.icon strokeWidth={1.5} size={24} />
+                            <div className=" flex items-center justify-center w-fit rounded-lg bg-zinc-50 border border-zinc-100 text-text-primary mb-6 text-2xl group-hover:scale-110 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all duration-300">
+                                <item.icon />
                             </div>
 
                             {/* Text */}
-                            <h3 className="text-xl font-bold text-zinc-900 mb-3 tracking-tight">
+                            <h3 className="text-xl font-bold text-text-primary mb-3 tracking-tight">
                                 {item.title}
                             </h3>
                             <p className="text-zinc-500 text-sm leading-relaxed font-medium">
