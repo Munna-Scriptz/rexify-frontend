@@ -9,11 +9,11 @@ import Slider from 'react-slick'
 
 const LatestProducts = () => {
     const products = [
-        { name: "Mac", text: '', image: pro1 },
-        { name: "iPhone", text: '', image: pro2 },
-        { name: "iPad", text: '', image: pro3 },
-        { name: "Apple Watch", text: '', image: pro4 },
-        { name: "Apple Vision Pro", text: '', image: pro5 },
+        { name: "iPhone 17 Pro", text: 'All out Pro.', desc: 'From $1099 or $45.79/mo. per month  for 24 mo. Footnote', image: pro1 },
+        { name: "MacBook Pro 14", text: 'Supercharged by M5.', desc: 'From $1599 or $133.25/mo. per month  for 12 mo.months Footnote ∆', image: pro2 },
+        { name: "iPad Pro", text: 'Mmmmm. Power.', desc: 'From $999 or $83.25/mo. per month  for 12 mo.', image: pro3 },
+        { name: "Apple Watch Series 11", text: 'The ultimate way to watch your health.', desc: 'From $399 or $33.25/mo. per month for 12 mo.', image: pro4 },
+        { name: "iPhone 17", text: 'Magichromatic.', desc: 'From $799 or $33.29/mo. per month  for 24 mo. Footnote ', image: pro5 },
     ];
 
     // ------------- Slider 
@@ -66,7 +66,7 @@ const LatestProducts = () => {
                     <div id="Header-Row" className='mb-10'>
                         <h2 className='text-3xl font-semibold text-text-primary'>The latest. <span className='text-text-secondary'>Take a look at what’s new, right now.</span></h2>
                     </div>
-                </div> 
+                </div>
 
                 {/* ------------ Cards  */}
                 <div id="Cards-Row" className='pl-10'>
