@@ -3,17 +3,16 @@ import pro1 from '../../assets/latestPro1.jpg'
 import pro2 from '../../assets/latestPro2.jpg'
 import pro3 from '../../assets/latestPro3.jpg'
 import pro4 from '../../assets/latestPro4.jpg'
-import pro5 from '../../assets/latestPro5.jpg'
 import SingleLatestCard from '../common/SingleLatestCard'
 import Slider from 'react-slick'
 
 const LatestProducts = () => {
     const products = [
-        { name: "iPhone 17 Pro", text: 'All out Pro.', desc: 'From $1099 or $45.79/mo. per month  for 24 mo. Footnote', image: pro1 },
-        { name: "MacBook Pro 14", text: 'Supercharged by M5.', desc: 'From $1599 or $133.25/mo. per month  for 12 mo.months Footnote ∆', image: pro2 },
-        { name: "iPad Pro", text: 'Mmmmm. Power.', desc: 'From $999 or $83.25/mo. per month  for 12 mo.', image: pro3 },
-        { name: "Apple Watch Series 11", text: 'The ultimate way to watch your health.', desc: 'From $399 or $33.25/mo. per month for 12 mo.', image: pro4 },
-        { name: "iPhone 17", text: 'Magichromatic.', desc: 'From $799 or $33.29/mo. per month  for 24 mo. Footnote ', image: pro5 },
+        { name: "iPhone 17 Pro", color: 'surface',text: 'All out Pro.', desc: 'From $1099 or $45.79/mo. for 24 mo.', image: pro1 },
+        { name: "MacBook Pro 14", color: 'surface',text: 'Supercharged by M5.', desc: 'From $1599 or $133.25/mo. for 12 months.', image: pro3 },
+        { name: "iPad Pro", color: 'surface',text: 'Mmmmm. Power.', desc: 'From $999 or $83.25/mo. for 12 months', image: pro2 },
+        { name: "Apple Watch Series 11", color: 'text-primary',text: 'The ultimate way to watch your health.', desc: 'From $399 or $33.25/mo. for 12 mo.', image: pro4 },
+        { name: "Apple Vision Pro", color: 'text-primary',text: 'New powerful M5 chip and comfortable Dual Knit Band.', desc: 'From $3499 or $291.58/mo. for 12 mo.', image: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-vision-pro-202510?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=TVVQNGFmWnRIeGl6RHZFdkZqMmNxT2JuTWZNYUVWLzFTaTdNdUxxeWtQVG45S05qekNUdVUwMVFyK1pKaERUd2JGcXNRQnFCV0w3WVRjTExvdm1ic1JRRkR1OTVrTXczUEJ3YTNXM0U0S1QrNmVjbmk5c1V4VVk2VEt3TGcxekg' },
     ];
 
     // ------------- Slider 
@@ -36,9 +35,9 @@ const LatestProducts = () => {
             <button
                 onClick={onClick}
                 className="absolute right-4 top-1/2 -translate-y-1/2 z-10
-                     h-12 w-12 text-xl rounded-full bg-gray-400/20 text-text-primary cursor-pointer shadow-lg
+                     h-12 w-12 text-xl rounded-full bg-gray-200/40 text-text-primary cursor-pointer shadow-lg
                      flex items-center justify-center
-                     hover:scale-105 transition"
+                     hover:scale-105 duration-300 hover:bg-gray-200 active:bg-gray-200"
             >
                 ❯
             </button>
@@ -50,9 +49,9 @@ const LatestProducts = () => {
             <button
                 onClick={onClick}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-10
-                     h-12 w-12 text-xl rounded-full bg-gray-400/20 text-text-primary cursor-pointer shadow-lg
+                     h-12 w-12 text-xl rounded-full bg-gray-200/40 text-text-primary cursor-pointer shadow-lg
                      flex items-center justify-center
-                     hover:scale-105 transition"
+                     hover:scale-105 duration-300 hover:bg-gray-200 active:bg-gray-200"
             >
                 ❮
             </button>
