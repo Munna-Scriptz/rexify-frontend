@@ -106,13 +106,6 @@ const SmallCategory = () => {
                         ))}
                     </Slider>
                 </div>
-
-                {/* Right Scroll Arrow (Floating) */}
-                {/* <button className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-[#E8E8ED] bg-opacity-80 hover:bg-[#d2d2d7] rounded-full items-center justify-center text-[#1D1D1F] transition-all backdrop-blur-md">
-                            <ChevronRight size={20} strokeWidth={2.5} />
-                        </button> */}
-
-
             </div>
         </section >
     );
