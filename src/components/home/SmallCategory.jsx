@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Slider from 'react-slick';
 
@@ -16,17 +16,19 @@ const SmallCategory = () => {
     ];
 
     // ------------- Slider 
+    const [currentSlide, setCurrentSlide] = useState(0);
+
     const settings = {
         arrows: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 7,
         slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "360px",
-        nextArrow: <ChevronRight />,
-        prevArrow: <ChevronLeft />,
+        beforeChange: (_, next) => setCurrentSlide(next),
+        nextArrow: currentSlide < 9 - 7 ? <ChevronRight /> : null,
+        prevArrow: currentSlide > 0 ? <ChevronLeft /> : null,
     };
+
 
     function ChevronRight({ onClick }) {
         return (
@@ -58,7 +60,7 @@ const SmallCategory = () => {
 
 
     return (
-        <section className="bg-[#F5F5F7] mt-28">
+        <section className="bg-[#F5F5F7] mt-28 overflow-x-hidden">
             <div className="container">
                 <div id='Small-Category-Row'>
 

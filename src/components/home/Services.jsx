@@ -2,7 +2,7 @@ import { ShieldCheck, Truck, Cpu, Headphones } from "lucide-react";
 
 
 
-Services = () => {
+const Services = () => {
     const servicesItem = [
         {
             icon: ShieldCheck,
