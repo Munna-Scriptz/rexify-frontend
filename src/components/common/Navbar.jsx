@@ -1,21 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../assets/Logo.png'
 import { Link, NavLink } from 'react-router'
 import { FiHeart } from 'react-icons/fi'
 import { PiUser } from 'react-icons/pi'
 
 const Navbar = () => {
-    // ----------------------- Navbar scroll 
-    var ScrollProps = window.pageYOffset;
-    window.onscroll = function () {
-        var currentScrollPos = window.pageYOffset;
-        if (ScrollProps > currentScrollPos) {
-            document.getElementById("navbar").style.top = "0";
-        } else {
-            document.getElementById("navbar").style.top = "-100px";
-        }
-        ScrollProps = currentScrollPos;
-    }
+
+    const [isNavbarWhite, setIsNavbarWhite] = useState(false);
+    useEffect(() => {
+        let lastScrollY = window.pageYOffset;
+        const navbar = document.getElementById("navbar");
+
+        const handleScroll = () => {
+            const currentScrollY = window.pageYOffset;
+
+            // Show navbar when scrolling up
+            if (currentScrollY < lastScrollY) {
+                navbar.style.top = "0";
+
+                if (currentScrollY > 0) {
+                    navbar.classList.add("bg-white");
+                    navbar.classList.remove("bg-transparent");
+
+                    // ✅ boolean = true
+                    setIsNavbarWhite(true);
+                }
+            }
+            // Hide navbar when scrolling down
+            else {
+                navbar.style.top = "-100px";
+            }
+
+            // At top of page → transparent
+            if (currentScrollY === 0) {
+                navbar.classList.add("bg-transparent");
+                navbar.classList.remove("bg-white");
+
+                // ✅ boolean = false
+                setIsNavbarWhite(false);
+            }
+
+            lastScrollY = currentScrollY;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
     return (
         <>
             <nav id='navbar' className='py-3 sticky top-0 duration-300 z-10 group hover:bg-surface'>
