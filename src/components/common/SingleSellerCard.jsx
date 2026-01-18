@@ -2,7 +2,7 @@ import { ShoppingBag, Heart } from "lucide-react";
 
 const SingleSellerCard = () => {
     return (
-        <div className="w-77.5 rounded-2xl border border-border overflow-hidden group relative">
+        <div className="w-77.5 mx-auto rounded-2xl border border-border overflow-hidden group relative">
 
             {/* Image Section */}
             <div className="relative bg-neutral-50 h-65 flex items-center justify-center">

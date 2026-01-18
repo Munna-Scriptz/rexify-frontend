@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Slider from 'react-slick';
 
 const SmallCategory = () => {
