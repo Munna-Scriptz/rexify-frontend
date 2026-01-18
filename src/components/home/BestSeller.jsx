@@ -1,4 +1,5 @@
 import React from 'react'
+import SingleSellerCard from '../common/SingleSellerCard'
 
 const BestSeller = () => {
     return (
@@ -10,8 +11,8 @@ const BestSeller = () => {
                     </div>
 
                     {/* ----------- Cards ----------- */}
-                    <div id="content-Row">
-
+                    <div id="content-Row" className='flex items-center gap-4'>
+                        <SingleSellerCard />
                     </div>
                 </div>
             </section>
