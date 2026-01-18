@@ -44,8 +44,8 @@ const Banner = () => {
             poster: video2Thumb,
         },
         {
-            header: 'Next Gen Speed',
-            text: 'Fast, Secure, Reliable',
+            header: 'Nexode Retractable Series',
+            text: 'Your Hassle-Free Travel Power Kit',
             source: video3,
             poster: video3Thumb
         },

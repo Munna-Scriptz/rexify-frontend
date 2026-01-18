@@ -3,6 +3,7 @@ import SingleSellerCard from '../common/SingleSellerCard'
 import Slider from 'react-slick';
 
 const BestSeller = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const settings = {
         arrows: true,
@@ -10,8 +11,9 @@ const BestSeller = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        nextArrow: <ChevronRight />,
-        prevArrow: <ChevronLeft />,
+        beforeChange: (_, next) => setCurrentSlide(next),
+        nextArrow: currentSlide < 9 - 7 ? <ChevronRight /> : null,
+        prevArrow: currentSlide > 0 ? <ChevronLeft /> : null,
     };
 
 
@@ -20,7 +22,7 @@ const BestSeller = () => {
             <button
                 onClick={onClick}
                 className="absolute right-0 top-1/2 -translate-y-1/2 z-10
-                 h-12 w-12 text-xl rounded-full bg-gray-400/20 text-text-primary cursor-pointer shadow-lg
+                 h-12 w-12 text-xl rounded-full bg-[#5087ff]/80 hover:bg-accent active:bg-sky-400 text-surface cursor-pointer shadow-lg
                  flex items-center justify-center
                  hover:scale-105 transition"
             >
@@ -34,7 +36,7 @@ const BestSeller = () => {
             <button
                 onClick={onClick}
                 className="absolute left-0 top-1/2 -translate-y-1/2 z-10
-                 h-12 w-12 text-xl rounded-full bg-gray-400/20 text-text-primary cursor-pointer shadow-lg
+                 h-12 w-12 text-xl rounded-full bg-[#5087ff]/80 hover:bg-accent active:bg-sky-400 text-surface cursor-pointer shadow-lg
                  flex items-center justify-center
                  hover:scale-105 transition"
             >
@@ -53,7 +55,7 @@ const BestSeller = () => {
             rating: 4.23,
             reviews: 749,
             badge: "New",
-            image: "/watch.png",
+            image: "https://www.startech.com.bd/image/cache/catalog/smart-watch/xiaomi/watch-s3/xiaomi-watch-s3-228x228.webp",
         },
         {
             id: 2,
@@ -63,7 +65,7 @@ const BestSeller = () => {
             rating: 4.78,
             reviews: 1284,
             badge: "Popular",
-            image: "/apple-watch.png",
+            image: "https://www.startech.com.bd/image/cache/catalog/watch/apple/watch-series-9/watch-series-9-midnight-01-228x228.webp",
         },
         {
             id: 3,
@@ -73,7 +75,7 @@ const BestSeller = () => {
             rating: 4.51,
             reviews: 962,
             badge: "Trending",
-            image: "/galaxy-watch.png",
+            image: "https://www.startech.com.bd/image/cache/catalog/smart-watch/samsung/galaxy-watch-7-40mm/galaxy-watch-7-40mm-228x228.webp",
         },
         {
             id: 4,
@@ -83,7 +85,7 @@ const BestSeller = () => {
             rating: 4.36,
             reviews: 684,
             badge: "New",
-            image: "/nothing-ear.png",
+            image: "https://www.startech.com.bd/image/cache/catalog/earbuds/hifuture/smartpods-2/smartpods-02-228x228.webp",
         },
         {
             id: 5,
@@ -93,7 +95,7 @@ const BestSeller = () => {
             rating: 4.82,
             reviews: 2147,
             badge: "Best Seller",
-            image: "/sony-xm5.png",
+            image: "https://www.startech.com.bd/image/cache/catalog/headphone/sony/wh-1000xm5/wh-1000xm5-offical-228x228.webp",
         },
         {
             id: 6,
@@ -103,7 +105,7 @@ const BestSeller = () => {
             rating: 4.67,
             reviews: 1732,
             badge: "Top Rated",
-            image: "/mx-master.png",
+            image: "https://www.startech.com.bd/image/cache/catalog/mouse/logitech/mx-master-3s/logitech-mx-master-3s-01-228x228.jpg",
         },
     ];
 
@@ -111,9 +113,17 @@ const BestSeller = () => {
         <>
             <section id='Best-Seller' className='mt-28'>
                 <div className="container">
-                    <div id="Header-Row" className='mb-10'>
-                        <h2 className='text-4xl font-semibold text-text-primary'>Best Seller.</h2>
+                    <div id="Header-Row" className="mb-10 flex items-end justify-between">
+                        <h2 className="text-4xl font-semibold text-text-primary">
+                            Best Seller.
+                        </h2>
+
+                        <button className="text-base font-medium text-text-secondary hover:text-neutral-900 flex items-center gap-1 transition cursor-pointer " >
+                            View all
+                            <span className="text-base">→</span>
+                        </button>
                     </div>
+
 
                     {/* ----------- Cards ----------- */}
                     <div id="content-Row">
@@ -121,8 +131,8 @@ const BestSeller = () => {
                         <Slider {...settings}>
                             {
                                 demoProducts.map((item, i) => (
-                                    <div>
-                                        <SingleSellerCard />
+                                    <div key={i}>
+                                        <SingleSellerCard img={item.image} badge={item.badge} name={item.title} variant={item.variant} price={item.price} rating={item.rating} reviews={item.reviews} />
                                     </div>
                                 ))
                             }

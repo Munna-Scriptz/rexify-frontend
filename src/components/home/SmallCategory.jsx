@@ -33,8 +33,8 @@ const SmallCategory = () => {
         return (
             <button
                 onClick={onClick}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10
-                 h-12 w-12 text-xl rounded-full bg-gray-400/20 text-text-primary cursor-pointer shadow-lg
+                className="absolute right-5 top-1/2 -translate-y-1/2 z-10
+                 h-12 w-12 text-xl rounded-full bg-[#5087ff]/80 hover:bg-accent active:bg-sky-400 text-surface cursor-pointer shadow-lg
                  flex items-center justify-center
                  hover:scale-105 transition"
             >
@@ -47,8 +47,8 @@ const SmallCategory = () => {
         return (
             <button
                 onClick={onClick}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10
-                 h-12 w-12 text-xl rounded-full bg-gray-400/20 text-text-primary cursor-pointer shadow-lg
+                className="absolute left-5 top-1/2 -translate-y-1/2 z-10
+                 h-12 w-12 text-xl rounded-full bg-[#5087ff]/80 hover:bg-accent active:bg-sky-400 text-surface cursor-pointer shadow-lg
                  flex items-center justify-center
                  hover:scale-105 transition"
             >
