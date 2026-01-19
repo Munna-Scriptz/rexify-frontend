@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router'
+import Button from '../../ui/Button'
 
 const MarqueeText = () => {
     return (
         <>
-            <section id='content' className='mt-28'>
+            <section id='Marquee' className='mt-50'>
                 <div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-flow-row-dense gap-y-4 gap-x-6">
                     <div className="lg:col-start-1 lg:col-end-13">
 
@@ -43,7 +45,18 @@ const MarqueeText = () => {
                     </div>
                 </div>
 
+                {/* ----------------- Bottom Text ----------------- */}
+                <div className='flex flex-col items-center gap-6 mt-10'>
+                    <p className='text-center max-w-5xl text-lg'>
+                        The Consumer Electronics industry is broken. We’re here to fix it. We build high-performance products that are easy to repair, upgrade, and customize, so you can use them for as long as you'd like.
+                    </p>
 
+                    <Link to={'/'}>
+                        <Button variant="outline">
+                            Learn More about us
+                        </Button>
+                    </Link>
+                </div>
             </section>
         </>
     )

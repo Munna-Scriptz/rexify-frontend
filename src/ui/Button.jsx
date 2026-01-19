@@ -26,13 +26,30 @@ const variants = {
   `,
 
     outline: `
-    px-6 py-2
-    border border-white
-    text-white
-    rounded-full
-    hover:bg-white hover:text-black
-    transition
-  `,
+    relative overflow-hidden
+    px-[24px] py-[8px]
+    text-base font-semibold uppercase
+    text-text-primary
+    border border-text-muted
+    rounded-[34px]
+    transition-all duration-300
+    [transition-timing-function:cubic-bezier(0.23,1,0.32,1)]
+
+    before:content-['']
+    before:absolute before:inset-0 before:m-auto
+    before:w-[50px] before:h-[50px]
+    before:rounded-[inherit]
+    before:scale-0 before:-z-10
+    before:bg-accent
+    before:transition-all before:duration-900
+    before:[transition-timing-function:cubic-bezier(0.23,1,0.32,1)]
+
+    hover:before:scale-[6]
+    hover:text-surface
+    hover:scale-110
+    hover:shadow-[0_0_20px_rgba(193,163,98,0.4)]
+    active:scale-100
+    `,
 
     solid: `
     px-6 py-2

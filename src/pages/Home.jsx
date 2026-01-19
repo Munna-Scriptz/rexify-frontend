@@ -5,6 +5,7 @@ import SmallCategory from '../components/home/SmallCategory'
 import LatestProducts from '../components/home/LatestProducts'
 import BestSeller from '../components/home/BestSeller'
 import MarqueeText from '../components/home/MarqueeText'
+import Essentials from '../components/home/Essentials'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <LatestProducts />
       <BestSeller />
       <MarqueeText />
+      <Essentials />
     </>
   )
 }
