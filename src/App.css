@@ -101,3 +101,46 @@ body{
 .slick-list {
   padding-left: 0px !important;
 }
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  gap: 3.5rem;
+  font-size: 2.25rem;
+}
+
+/* each repeating block */
+.marquee-track {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* 🔥 PAUSE ON HOVER (Framework-style) */
+.marquee-wrapper:hover .animate-marquee {
+  animation-play-state: paused;
+}
+.marquee-wrapper {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
