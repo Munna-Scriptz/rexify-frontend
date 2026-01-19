@@ -4,7 +4,7 @@ import Services from '../components/home/Services'
 import SmallCategory from '../components/home/SmallCategory'
 import LatestProducts from '../components/home/LatestProducts'
 import BestSeller from '../components/home/BestSeller'
-import InfiniteText from '../components/home/InfiniteText'
+import MarqueeText from '../components/home/MarqueeText'
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
       <SmallCategory />
       <LatestProducts />
       <BestSeller />
-      <InfiniteText />
+      <MarqueeText />
     </>
   )
 }
