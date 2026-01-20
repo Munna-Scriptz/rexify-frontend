@@ -6,6 +6,7 @@ import LatestProducts from '../components/home/LatestProducts'
 import BestSeller from '../components/home/BestSeller'
 import MarqueeText from '../components/home/MarqueeText'
 import Essentials from '../components/home/Essentials'
+import NewsLetter from '../components/home/NewsLetter'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <BestSeller />
       <MarqueeText />
       <Essentials />
+      <NewsLetter />
     </>
   )
 }

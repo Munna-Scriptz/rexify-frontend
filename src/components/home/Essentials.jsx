@@ -1,5 +1,7 @@
 import React from 'react'
 import SingleEssentialCard from '../common/SingleEssentialCard';
+import { Link } from 'react-router';
+import Button from '../../ui/Button';
 
 const Essentials = () => {
     const demoProducts = [
@@ -140,6 +142,11 @@ const Essentials = () => {
                         </div>
                     </div>
 
+
+                    {/* -------------- Explore more ------------- */}
+                    <Link to={'/'} className='flex items-center justify-center mt-14'>
+                        <Button variant='explore'>Explore More →</Button>
+                    </Link>
                 </div>
             </section>
         </>

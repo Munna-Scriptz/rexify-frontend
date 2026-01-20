@@ -51,13 +51,16 @@ const variants = {
     active:scale-100
     `,
 
-    solid: `
-    px-6 py-2
-    bg-black text-white
-    rounded-full
-    hover:bg-gray-800
-    transition
-  `,
+    explore: `
+        px-7 py-3 group
+        bg-text-primary text-white
+        rounded-full
+        font-medium tracking-wide
+        shadow-[0_10px_30px_rgba(0,0,0,0.2)]
+        hover:bg-black
+        hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)]
+        transition-all duration-300 ease-out
+    `,
 };
 
 const Button = ({
