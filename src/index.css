@@ -23,6 +23,7 @@
   /* ================= Text ================= */
   --color-text-primary: rgb(29, 29, 31);   /* main text */
   --color-text-secondary: #6e6e73; /* secondary text */
+  --color-coil: #333333; /* Coil text */
   --color-text-muted: #9aa0a6;     /* hints */
 
   /* ================= Borders ================= */
@@ -51,6 +52,7 @@ omg {
   /* ================= Text ================= */
   --color-text-primary: #212121;   /* main text */
   --color-text-secondary: #6e6e73; /* secondary text */
+  --color-coil: #333333; /* secondary text */
   --color-text-muted: #9aa0a6;     /* hints */
 
   /* ================= Borders ================= */
