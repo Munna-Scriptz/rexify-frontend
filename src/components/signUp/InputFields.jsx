@@ -2,7 +2,7 @@ import Input from "../../ui/Input"
 
 export const EmailField = ({ onChange, error }) => {
   return (
-    <div className="w-full mb-6">
+    <div className="w-full mb-6 animate-slide-in">
       <Input
         label="What’s your email?"
         variant="signup"
@@ -18,7 +18,7 @@ export const EmailField = ({ onChange, error }) => {
 
 export const InfoField = ({ onChangeFullname, onChangePhone, fullnameError, phoneError }) => {
   return (
-    <div className="w-full mb-6 flex flex-col gap-y-4">
+    <div className="w-full mb-6 flex flex-col gap-y-4 animate-slide-in">
       <Input
         label="What’s your Fullname?"
         variant="signup"
@@ -45,13 +45,13 @@ export const InfoField = ({ onChangeFullname, onChangePhone, fullnameError, phon
 
 export const PasswordField = ({ onChangePassword, onChangConfirmPass, passwordError, ConfirmError }) => {
   return (
-    <div className="w-full mb-6 flex flex-col gap-y-4">
+    <div className="w-full mb-6 flex flex-col gap-y-4 animate-slide-in">
       <Input
         label="Create a password"
         variant="signup"
         placeholder="Enter your password"
         error={passwordError}
-        type="password"
+        password={true}
         id="password"
         name="password"
         onChange={(e) => onChangePassword(e.target.value)}
@@ -61,7 +61,7 @@ export const PasswordField = ({ onChangePassword, onChangConfirmPass, passwordEr
         variant="signup"
         placeholder="Enter your password again"
         error={ConfirmError}
-        type="password"
+        password={true}
         id="confirm password"
         name="confirm password"
         onChange={(e) => onChangConfirmPass(e.target.value)}

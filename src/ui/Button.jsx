@@ -63,8 +63,9 @@ const variants = {
     `,
 
     authButton: `
-        w-full bg-[#C4C4C4] text-white font-semibold py-3.5 rounded-full mb-10 hover:bg-text-primary duration-300 cursor-pointer
+        w-full bg-coil/80 text-white font-semibold py-3.5 rounded-full mb-10 hover:bg-text-primary duration-300 cursor-pointer
     `,
+    
     authMethodButton: `
         flex-1 flex items-center cursor-pointer justify-center gap-3 border border-gray-400 hover:bg-gray-200 rounded-full py-3 duration-300 
         text-coil text-sm font-medium
@@ -75,14 +76,24 @@ const Button = ({
     children,
     variant = "primary",
     className = "",
+    loading = false,
     ...props
 }) => {
     return (
         <button
             className={`${variants[variant]} ${className} cursor-pointer`}
+            disabled={loading}
             {...props}
         >
-            {children}
+            {loading ? (
+                <span className="flex justify-center items-center gap-1 py-2 cursor-no-drop">
+                    <span className="inline-block w-2 h-2 bg-current rounded-full animate-bounce"></span>
+                    <span className="inline-block w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></span>
+                    <span className="inline-block w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: "0.4s" }}></span>
+                </span>
+            ) : (
+                children
+            )}
         </button>
     );
 };

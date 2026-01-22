@@ -9,6 +9,7 @@ import { IsValidEmail } from '../utils/Validations';
 
 const SignUp = () => {
     const [step, setStep] = useState(1)
+    const [loading, setLoading] = useState(false)
 
     const [formData, setFormData] = useState({
         email: "",
@@ -30,30 +31,38 @@ const SignUp = () => {
         if (step == 1) {
             if (!formData.email) return setFormData(prev => ({ ...prev, emailError: "Please enter your email address" }))
             if (!IsValidEmail(formData.email)) return setFormData(prev => ({ ...prev, emailError: "Please enter a valid email address" }))
-            setStep(2)
+
+            setLoading(true)
+            setTimeout(() => {
+                setStep(2)
+                setLoading(false)
+            }, 800);
         } else if (step == 2) {
             if (!formData.fullname) return setFormData(prev => ({ ...prev, fullnameError: "Please enter your Fullname" }))
             if (!formData.phone) return setFormData(prev => ({ ...prev, phoneError: "Please enter your phone number" }))
-            setStep(3)
+            setLoading(true)
+            setTimeout(() => {
+                setStep(3)
+                setLoading(false)
+            }, 800);
         } else if (step == 3) {
             if (!formData.password) return setFormData(prev => ({ ...prev, passwordError: "Please enter your password" }))
             if (!formData.confirmPass) return setFormData(prev => ({ ...prev, confirmPassError: "Please enter your password again" }))
             if (formData.password != formData.confirmPass) return setFormData(prev => ({ ...prev, confirmPassError: "Password doesn't match" }))
-            console.log('congo')
         }
 
     }
 
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
-            <form onSubmit={handleForm} className="w-full max-w-175 px-6 py-12 flex flex-col items-center">
+        <div className="min-h-screen flex items-center justify-center overflow-hidden">
+            <form onSubmit={handleForm} className="w-full max-w-170 flex flex-col items-center">
 
                 {/* -------- Header */}
                 <Header />
 
                 {/* -------- Stepper */}
-                <Stepper step={step} />
+                <Stepper step={step} setStep={setStep} />
 
                 {/* -------- Form input */}
                 {step == 1 && <EmailField error={formData.emailError} onChange={(value) => setFormData(prev => ({ ...prev, email: value, emailError: "" }))} />}
@@ -61,7 +70,7 @@ const SignUp = () => {
                 {step == 3 && <PasswordField passwordError={formData.passwordError} ConfirmError={formData.confirmPassError} onChangePassword={(value) => setFormData(prev => ({ ...prev, password: value, passwordError: "" }))} onChangConfirmPass={(value) => setFormData(prev => ({ ...prev, confirmPass: value, confirmPassError: "" }))} />}
 
                 {/* -------- Next button */}
-                <Button variant='authButton' type="submit">
+                <Button variant='authButton' loading={loading} type="submit">
                     Next
                 </Button>
 
