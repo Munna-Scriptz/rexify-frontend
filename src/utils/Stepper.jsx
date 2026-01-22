@@ -1,35 +1,36 @@
-export const Stepper = () => {
+export const Stepper = ({ step }) => {
     return (
         <div className="w-full flex items-start justify-between mb-10">
 
-            {/* Step 1 */}
             <div className="flex flex-col items-center w-fit">
-                <div className="w-6 h-6 rounded-full bg-coil text-white flex items-center justify-center text-xs font-bold mb-2">
+                <div className={`${step >= 1 ? "bg-coil text-white" : "bg-gray-400 text-white"} w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mb-2`}>
                     1
                 </div>
-                <span className="text-xs text-text-primary font-medium whitespace-nowrap">Enter your email address</span>
+                <span className={`${step >= 1 ? "text-text-primary" : "text-text-muted"} text-xs font-medium whitespace-nowrap`}>
+                    Enter your email address
+                </span>
             </div>
 
-            {/* Line Spacer 1 */}
-            <div className="flex-1 h-px bg-text-muted mt-3 mx-2"></div>
+            <div className={`flex-1 h-px mt-3 mx-2 ${step >= 2 ? "bg-coil" : "bg-text-muted"}`}></div>
 
-            {/* Step 2 */}
             <div className="flex flex-col items-center w-fit">
-                <div className="w-6 h-6 rounded-full bg-gray-400 text-white flex items-center justify-center text-xs font-bold mb-2">
+                <div className={`${step >= 2 ? "bg-coil text-white" : "bg-gray-400 text-white"} w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mb-2`}>
                     2
                 </div>
-                <span className="text-xs text-text-muted whitespace-nowrap">Provide your basic info</span>
+                <span className={`${step >= 2 ? "text-text-primary" : "text-text-muted"} text-xs whitespace-nowrap`}>
+                    Provide your basic info
+                </span>
             </div>
 
-            {/* Line Spacer 2 */}
-            <div className="flex-1 h-px bg-text-muted mt-3 mx-2"></div>
+            <div className={`flex-1 h-px mt-3 mx-2 ${step >= 3 ? "bg-coil" : "bg-text-muted"}`}></div>
 
-            {/* Step 3 */}
             <div className="flex flex-col items-center w-fit">
-                <div className="w-6 h-6 rounded-full bg-gray-400 text-white flex items-center justify-center text-xs font-bold mb-2">
+                <div className={`${step >= 3 ? "bg-coil text-white" : "bg-gray-400 text-white"} w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mb-2`}>
                     3
                 </div>
-                <span className="text-xs text-text-muted whitespace-nowrap">Create your password</span>
+                <span className={`${step >= 3 ? "text-text-primary" : "text-text-muted"} text-xs whitespace-nowrap`}>
+                    Create your password
+                </span>
             </div>
 
         </div>

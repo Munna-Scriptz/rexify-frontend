@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../ui/Button';
 import { Stepper } from '../utils/Stepper';
 import SocialButtons from '../components/signUp/SocialButtons';
@@ -7,31 +7,48 @@ import Header from '../components/signUp/Header';
 import OrDivider from '../helpers/OrDivider';
 
 const SignUp = () => {
+    const [step, setStep] = useState(1)
+
+    const [formData, setFormData] = useState({
+        email: "",
+        emailError: ""
+    })
+
+    // ------------ Form handler 
+    const handleForm = (e)=>{
+        e.preventDefault()
+        if (!formData.email) return setFormData(prev => ({...prev, emailError: "Please enter your email address"}))
+        
+        // -------- Step 2
+        console.log(formData.email)
+    }
+
+
     return (
         <div className="min-h-screen flex items-center justify-center">
-            <div className="w-full max-w-175 px-6 py-12 flex flex-col items-center">
+            <form onSubmit={handleForm} className="w-full max-w-175 px-6 py-12 flex flex-col items-center">
 
-                {/* 1. Header */}
+                {/* -------- Header */}
                 <Header />
 
-                {/* ----------------- Stepper */}
-                <Stepper />
+                {/* -------- Stepper */}
+                <Stepper step={step} />
 
-                {/* 3. Form Input */}
-                <EmailField />
+                {/* -------- Form input */}
+                <EmailField error={formData.emailError} onChange={(value) => setFormData(prev => ({ ...prev, email: value , emailError: ""}))} />
 
-                {/* 4. Next Button */}
-                <Button variant='authButton'>
+                {/* -------- Next button */}
+                <Button variant='authButton' type="submit">
                     Next
                 </Button>
 
-                {/* 5. Divider */}
+                {/* -------- Or Divider */}
                 <OrDivider />
 
-                {/* 6. Social Buttons */}
+                {/* -------- Social button */}
                 <SocialButtons />
 
-            </div>
+            </form>
         </div>
     );
 };

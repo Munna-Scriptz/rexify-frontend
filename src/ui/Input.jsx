@@ -13,14 +13,8 @@ const variants = {
     focus:ring-1
   `,
 };
+const Input = ({ label, error, onChange, variant = "signup", className = "", ...props }) => {
 
-const Input = ({
-    label,
-    error,
-    variant = "signup",
-    className = "",
-    ...props
-}) => {
     return (
         <div className="w-full">
 
@@ -41,6 +35,7 @@ const Input = ({
                     } 
                     ${className}
                 `}
+                onChange={onChange}
                 {...props}
             />
 
