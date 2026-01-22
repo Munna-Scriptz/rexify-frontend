@@ -2,25 +2,46 @@ import React, { useState } from 'react';
 import Button from '../ui/Button';
 import { Stepper } from '../utils/Stepper';
 import SocialButtons from '../components/signUp/SocialButtons';
-import { EmailField } from '../components/signUp/InputFields';
+import { EmailField, InfoField, PasswordField } from '../components/signUp/InputFields';
 import Header from '../components/signUp/Header';
 import OrDivider from '../helpers/OrDivider';
+import { IsValidEmail } from '../utils/Validations';
 
 const SignUp = () => {
     const [step, setStep] = useState(1)
 
     const [formData, setFormData] = useState({
         email: "",
-        emailError: ""
+        emailError: "",
+        fullname: "",
+        fullnameError: "",
+        phone: "",
+        phoneError: "",
+        password: "",
+        passwordError: "",
+        confirmPass: "",
+        confirmPassError: ""
     })
 
     // ------------ Form handler 
-    const handleForm = (e)=>{
+    const handleForm = (e) => {
         e.preventDefault()
-        if (!formData.email) return setFormData(prev => ({...prev, emailError: "Please enter your email address"}))
-        
-        // -------- Step 2
-        console.log(formData.email)
+
+        if (step == 1) {
+            if (!formData.email) return setFormData(prev => ({ ...prev, emailError: "Please enter your email address" }))
+            if (!IsValidEmail(formData.email)) return setFormData(prev => ({ ...prev, emailError: "Please enter a valid email address" }))
+            setStep(2)
+        } else if (step == 2) {
+            if (!formData.fullname) return setFormData(prev => ({ ...prev, fullnameError: "Please enter your Fullname" }))
+            if (!formData.phone) return setFormData(prev => ({ ...prev, phoneError: "Please enter your phone number" }))
+            setStep(3)
+        } else if (step == 3) {
+            if (!formData.password) return setFormData(prev => ({ ...prev, passwordError: "Please enter your password" }))
+            if (!formData.confirmPass) return setFormData(prev => ({ ...prev, confirmPassError: "Please enter your password again" }))
+            if (formData.password != formData.confirmPass) return setFormData(prev => ({ ...prev, confirmPassError: "Password doesn't match" }))
+            console.log('congo')
+        }
+
     }
 
 
@@ -35,7 +56,9 @@ const SignUp = () => {
                 <Stepper step={step} />
 
                 {/* -------- Form input */}
-                <EmailField error={formData.emailError} onChange={(value) => setFormData(prev => ({ ...prev, email: value , emailError: ""}))} />
+                {step == 1 && <EmailField error={formData.emailError} onChange={(value) => setFormData(prev => ({ ...prev, email: value, emailError: "" }))} />}
+                {step == 2 && <InfoField fullnameError={formData.fullnameError} phoneError={formData.phoneError} onChangeFullname={(value) => setFormData(prev => ({ ...prev, fullname: value, fullnameError: "" }))} onChangePhone={(value) => setFormData(prev => ({ ...prev, phone: value, phoneError: "" }))} />}
+                {step == 3 && <PasswordField passwordError={formData.passwordError} ConfirmError={formData.confirmPassError} onChangePassword={(value) => setFormData(prev => ({ ...prev, password: value, passwordError: "" }))} onChangConfirmPass={(value) => setFormData(prev => ({ ...prev, confirmPass: value, confirmPassError: "" }))} />}
 
                 {/* -------- Next button */}
                 <Button variant='authButton' type="submit">
