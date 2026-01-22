@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import Button from '../ui/Button';
 import { Stepper } from '../utils/Stepper';
 import SocialButtons from '../components/signUp/SocialButtons';
