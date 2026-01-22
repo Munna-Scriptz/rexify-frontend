@@ -61,6 +61,14 @@ const variants = {
         hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)]
         transition-all duration-300 ease-out
     `,
+
+    authButton: `
+        w-full bg-[#C4C4C4] text-white font-semibold py-3.5 rounded-full mb-10 hover:bg-text-primary duration-300 cursor-pointer
+    `,
+    authMethodButton: `
+        flex-1 flex items-center cursor-pointer justify-center gap-3 border border-gray-400 hover:bg-gray-200 rounded-full py-3 duration-300 
+        text-coil text-sm font-medium
+    `
 };
 
 const Button = ({

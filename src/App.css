@@ -3,6 +3,10 @@ body{
     font-family: var(--font-primary);
     /* color: var(--color-surface); */
 }
+::selection{
+  background-color: #212121;
+  color: #f7f8fa;
+}
 /* ------------------------- All css ------------------------ */
 .navLinkHover {
 	position: relative;
