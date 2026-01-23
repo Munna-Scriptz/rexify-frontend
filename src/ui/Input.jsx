@@ -26,12 +26,23 @@ const Input = ({ label, error, onChange, variant = "signup", className = "", pas
     return (
         <div className="w-full">
 
-            {/* Label */}
-            {label && (
-                <label className={`text-sm mb-2 block ${error ? "text-error" : "text-coil"}`}>
-                    {label}
-                </label>
-            )}
+            {/* Label and Password Toggle */}
+            <div className="flex justify-between items-center mb-2">
+                {label && (
+                    <label className={`text-sm ${error ? "text-error" : "text-coil"}`}>
+                        {label}
+                    </label>
+                )}
+                {password && (
+                    <button
+                        type="button"
+                        onClick={togglePasswordVisibility}
+                        className="text-xl text-coil cursor-pointer hover:text-gray-600 focus:outline-none"
+                    >
+                        {showPassword ? <div className="flex items-center gap-2"><IoEyeOffOutline /><p className="text-sm">Hide</p></div> : <div className="flex items-center gap-2"><IoEyeOutline /><p className="text-sm">Show</p></div>}
+                    </button>
+                )}
+            </div>
 
             {/* Input Wrapper */}
             <div className="relative w-full">
@@ -44,22 +55,10 @@ const Input = ({ label, error, onChange, variant = "signup", className = "", pas
                             : "focus:border-coil focus:ring-coil border border-gray-300"
                         } 
                         ${className}
-                        ${password ? "pr-10" : ""}
                     `}
                     onChange={onChange}
                     {...props}
                 />
-
-                {/* Eye Icon Button */}
-                {password && (
-                    <button
-                        type="button"
-                        onClick={togglePasswordVisibility}
-                        className="absolute right-3 top-1/2 text-xl -translate-y-1/2 text-coil cursor-pointer hover:text-gray-600 focus:outline-none"
-                    >
-                        {showPassword ? <IoEyeOffOutline />: <IoEyeOutline />}
-                    </button>
-                )}
             </div>
 
             {/* Error */}

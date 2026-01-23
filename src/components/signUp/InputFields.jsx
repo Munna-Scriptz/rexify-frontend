@@ -72,7 +72,7 @@ export const PasswordField = ({ onChangePassword, onChangConfirmPass, passwordEr
 
 export const SinglePasswordField = ({ onChange, error, }) => {
   return (
-    <div className="w-full mb-6 flex flex-col gap-y-4 animate-slide-in">
+    <div className="w-full flex flex-col gap-y-4 animate-slide-in">
       <Input
         label="Your password"
         variant="signup"

@@ -5,10 +5,12 @@ import { EmailField, SinglePasswordField } from '../components/signUp/InputField
 import Header from '../components/signUp/Header';
 import OrDivider from '../helpers/OrDivider';
 import { IsValidEmail } from '../utils/Validations';
+import { Link } from 'react-router';
 
 const SignIn = () => {
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
+  const [rememberMe, setRememberMe] = useState(false);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -49,25 +51,38 @@ const SignIn = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center overflow-hidden">
-      <form onSubmit={handleForm} className="w-full max-w-170 flex flex-col items-center">
+      <form onSubmit={handleForm} className="w-full max-w-140 flex flex-col items-center">
 
         {/* -------- Header */}
         <Header header={"Welcome back!"} text={"Don't have an account?"} linkText={"Sign Up"} linkPath={"/auth/signUp"} />
 
         {/* -------- Form input */}
-        <EmailField error={formData.emailError} onChange={(value) => setFormData(prev => ({ ...prev, email: value, emailError: "" }))} labelTxt={'Your email address'}/>
+        <EmailField error={formData.emailError} onChange={(value) => setFormData(prev => ({ ...prev, email: value, emailError: "" }))} labelTxt={'Your email address'} />
         <SinglePasswordField error={formData.passwordError} onChange={(value) => setFormData(prev => ({ ...prev, password: value, passwordError: "" }))} />
+        <div className="w-full flex items-center justify-between py-2">
 
+          <div className="flex items-center gap-2 pt-2 pb-6 cursor-pointer" onClick={() => setRememberMe(!rememberMe)}>
+            <button className={` w-4 h-4 rounded-sm border transition-all duration-200 ${rememberMe ? 'bg-coil border-coil' : 'bg-transparent border-zinc-400'}`} aria-label="Keep me signed in" />
+            <span className="text-[13px] text-zinc-600 font-medium select-none">
+              Keep me signed in until I sign out
+            </span>
+          </div>
+
+          <Link href="/forgot-password" className="text-[13px] text-coil font-medium underline underline-offset-4 hover:text-coil transition-colors">
+            Forget your password
+          </Link>
+
+        </div>
         {/* -------- Next button */}
         <Button variant='authButton' loading={loading} type="submit">
           Next
         </Button>
 
         {/* -------- Or Divider */}
-        <OrDivider />
+        <OrDivider text={"Continue with"} />
 
         {/* -------- Social button */}
-        <SocialButtons />
+        <SocialButtons facebookTxt={"Continue with Facebook"} googleTxt={"Continue with Google"} />
 
       </form>
     </div>
