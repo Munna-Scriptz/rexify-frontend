@@ -59,7 +59,7 @@ const SmallCategory = () => {
 
 
     return (
-        <section className="bg-[#F5F5F7] mt-28 overflow-x-hidden">
+        <section className="mt-28 overflow-x-hidden">
             <div className="container">
                 <div id='Small-Category-Row'>
 

@@ -6,7 +6,7 @@ const SingleSellerCard = ({ img, badge, name, variant, price, rating, reviews })
         <div className="w-77.5 mx-auto rounded-2xl border border-border overflow-hidden group relative">
 
             {/* Image Section */}
-            <div className="relative bg-neutral-50 h-65 flex items-center justify-center">
+            <div className="relative h-65 flex items-center justify-center">
                 <img
                     src={img}
                     alt={name}
