@@ -23,35 +23,23 @@ const SignIn = () => {
   const handleForm = (e) => {
     e.preventDefault()
 
-    if (step == 1) {
-      if (!formData.email) return setFormData(prev => ({ ...prev, emailError: "Please enter your email address" }))
-      if (!IsValidEmail(formData.email)) return setFormData(prev => ({ ...prev, emailError: "Please enter a valid email address" }))
+    // ------------ Validations 
+    if (!formData.email) return setFormData(prev => ({ ...prev, emailError: "Please enter your email address" }))
+    if (!IsValidEmail(formData.email)) return setFormData(prev => ({ ...prev, emailError: "Please enter a valid email address" }))
+    if (!formData.password) return setFormData(prev => ({ ...prev, passwordError: "Please enter your password" }))
+    // if (formData.password != 1234) return setFormData(prev => ({ ...prev, passwordError: "Wrong password" }))
 
-      setLoading(true)
-      setTimeout(() => {
-        setStep(2)
-        setLoading(false)
-      }, 800);
-    } else if (step == 2) {
-      if (!formData.fullname) return setFormData(prev => ({ ...prev, fullnameError: "Please enter your Fullname" }))
-      if (!formData.phone) return setFormData(prev => ({ ...prev, phoneError: "Please enter your phone number" }))
-      setLoading(true)
-      setTimeout(() => {
-        setStep(3)
-        setLoading(false)
-      }, 800);
-    } else if (step == 3) {
-      if (!formData.password) return setFormData(prev => ({ ...prev, passwordError: "Please enter your password" }))
-      if (!formData.confirmPass) return setFormData(prev => ({ ...prev, confirmPassError: "Please enter your password again" }))
-      if (formData.password != formData.confirmPass) return setFormData(prev => ({ ...prev, confirmPassError: "Password doesn't match" }))
-    }
-
+    setLoading(true)
+    setTimeout(() => {
+      setStep(2)
+      setLoading(false)
+    }, 800)
   }
 
 
   return (
     <div className="min-h-screen flex items-center justify-center overflow-hidden">
-      <form onSubmit={handleForm} className="w-full max-w-140 flex flex-col items-center">
+      <form onSubmit={handleForm} className="w-full max-w-140 flex flex-col items-center animate-slide-in">
 
         {/* -------- Header */}
         <Header header={"Welcome back!"} text={"Don't have an account?"} linkText={"Sign Up"} linkPath={"/auth/signUp"} />

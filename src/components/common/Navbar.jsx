@@ -21,8 +21,6 @@ const Navbar = () => {
                 if (currentScrollY > 0) {
                     navbar.classList.add("bg-white");
                     navbar.classList.remove("bg-transparent");
-
-                    // ✅ boolean = true
                     setIsNavbarWhite(true);
                 }
             }
@@ -95,9 +93,9 @@ const Navbar = () => {
                             </div>
 
                             {/* --------- User  */}
-                            <div className={`w-8 h-8 flex items-center justify-center hover:bg-text-muted/20 duration-300 group-hover:text-text-primary ${isNavbarWhite && 'text-text-primary'} text-xl rounded-full cursor-pointer relative`}>
+                            <Link to={'/auth'} className={`w-8 h-8 flex items-center justify-center hover:bg-text-muted/20 duration-300 group-hover:text-text-primary ${isNavbarWhite && 'text-text-primary'} text-xl rounded-full cursor-pointer relative`}>
                                 <PiUser />
-                            </div>
+                            </Link>
                         </div>
 
                     </div>

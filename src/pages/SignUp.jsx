@@ -56,7 +56,7 @@ const SignUp = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center overflow-hidden">
-            <form onSubmit={handleForm} className="w-full max-w-170 flex flex-col items-center">
+            <form onSubmit={handleForm} className="w-full max-w-170 flex flex-col items-center animate-slide-in">
 
                 {/* -------- Header */}
                 <Header header={"Create an account"} text={"Already have an account?"} linkText={"Sign In"} linkPath={"/auth/signIn"}/>

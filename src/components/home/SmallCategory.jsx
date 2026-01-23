@@ -64,7 +64,7 @@ const SmallCategory = () => {
                 <div id='Small-Category-Row'>
 
                     {/* 1. Header Section */}
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-18 gap-8">
+                    <div className="flex flex-col md:flex-row justify-between items-start mb-18 gap-8">
 
                         {/* Left: Big Title */}
                         <h1 className="text-6xl md:text-[80px] font-bold tracking-tight leading-none text-text-primary">
@@ -72,7 +72,7 @@ const SmallCategory = () => {
                         </h1>
 
                         {/* Right: Subtext */}
-                        <h2 className="text-xl md:text-2xl font-semibold mb-2 text-text-primary">
+                        <h2 className="text-xl md:text-2xl font-semibold mb-2 text-text-primary text-right">
                             The best way to buy the <br className="hidden md:block" />
                             products you love.
                         </h2>
