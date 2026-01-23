@@ -5,7 +5,7 @@ import LayoutOne from './layout/LayoutOne'
 import Home from './pages/Home'
 import LayoutTwo from './layout/LayoutTwo'
 import SignUp from './pages/SignUp'
-import SIgnIn from './pages/SIgnIn'
+import SignIn from './pages/SignIn'
 
 const App = () => {
   const MyRouter = createBrowserRouter(createRoutesFromElements(
@@ -17,7 +17,7 @@ const App = () => {
       <Route path='/auth' element={<LayoutTwo />}>
         <Route index element={<Navigate to="signUp" replace />} />
         <Route path="signUp" element={<SignUp />} />
-        <Route path="signIn" element={<SIgnIn />} />
+        <Route path="signIn" element={<SignIn />} />
       </Route>
     </Route>
   ))

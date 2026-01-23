@@ -1,10 +1,10 @@
 import Input from "../../ui/Input"
 
-export const EmailField = ({ onChange, error }) => {
+export const EmailField = ({ onChange, error, labelTxt }) => {
   return (
     <div className="w-full mb-6 animate-slide-in">
       <Input
-        label="What’s your email?"
+        label={labelTxt || "What’s your email?"}
         variant="signup"
         placeholder="Enter your email address"
         error={error}
@@ -65,6 +65,23 @@ export const PasswordField = ({ onChangePassword, onChangConfirmPass, passwordEr
         id="confirm password"
         name="confirm password"
         onChange={(e) => onChangConfirmPass(e.target.value)}
+      />
+    </div>
+  )
+}
+
+export const SinglePasswordField = ({ onChange, error, }) => {
+  return (
+    <div className="w-full mb-6 flex flex-col gap-y-4 animate-slide-in">
+      <Input
+        label="Your password"
+        variant="signup"
+        placeholder="Enter your password"
+        error={error}
+        password={true}
+        id="password"
+        name="password"
+        onChange={(e) => onChange(e.target.value)}
       />
     </div>
   )

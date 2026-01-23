@@ -59,7 +59,7 @@ const SignUp = () => {
             <form onSubmit={handleForm} className="w-full max-w-170 flex flex-col items-center">
 
                 {/* -------- Header */}
-                <Header />
+                <Header header={"Create an account"} text={"Already have an account?"} linkText={"Sign In"} linkPath={"/auth/signIn"}/>
 
                 {/* -------- Stepper */}
                 <Stepper step={step} setStep={setStep} />

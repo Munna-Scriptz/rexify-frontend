@@ -1,9 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Button from '../ui/Button';
+import SocialButtons from '../components/signUp/SocialButtons';
+import { EmailField, SinglePasswordField } from '../components/signUp/InputFields';
+import Header from '../components/signUp/Header';
+import OrDivider from '../helpers/OrDivider';
+import { IsValidEmail } from '../utils/Validations';
 
-const SIgnIn = () => {
+const SignIn = () => {
+  const [step, setStep] = useState(1)
+  const [loading, setLoading] = useState(false)
+
+  const [formData, setFormData] = useState({
+    email: "",
+    emailError: "",
+    password: "",
+    passwordError: "",
+  })
+
+  // ------------ Form handler 
+  const handleForm = (e) => {
+    e.preventDefault()
+
+    if (step == 1) {
+      if (!formData.email) return setFormData(prev => ({ ...prev, emailError: "Please enter your email address" }))
+      if (!IsValidEmail(formData.email)) return setFormData(prev => ({ ...prev, emailError: "Please enter a valid email address" }))
+
+      setLoading(true)
+      setTimeout(() => {
+        setStep(2)
+        setLoading(false)
+      }, 800);
+    } else if (step == 2) {
+      if (!formData.fullname) return setFormData(prev => ({ ...prev, fullnameError: "Please enter your Fullname" }))
+      if (!formData.phone) return setFormData(prev => ({ ...prev, phoneError: "Please enter your phone number" }))
+      setLoading(true)
+      setTimeout(() => {
+        setStep(3)
+        setLoading(false)
+      }, 800);
+    } else if (step == 3) {
+      if (!formData.password) return setFormData(prev => ({ ...prev, passwordError: "Please enter your password" }))
+      if (!formData.confirmPass) return setFormData(prev => ({ ...prev, confirmPassError: "Please enter your password again" }))
+      if (formData.password != formData.confirmPass) return setFormData(prev => ({ ...prev, confirmPassError: "Password doesn't match" }))
+    }
+
+  }
+
+
   return (
-    <div>SIgnIn</div>
-  )
-}
+    <div className="min-h-screen flex items-center justify-center overflow-hidden">
+      <form onSubmit={handleForm} className="w-full max-w-170 flex flex-col items-center">
 
-export default SIgnIn
+        {/* -------- Header */}
+        <Header header={"Welcome back!"} text={"Don't have an account?"} linkText={"Sign Up"} linkPath={"/auth/signUp"} />
+
+        {/* -------- Form input */}
+        <EmailField error={formData.emailError} onChange={(value) => setFormData(prev => ({ ...prev, email: value, emailError: "" }))} labelTxt={'Your email address'}/>
+        <SinglePasswordField error={formData.passwordError} onChange={(value) => setFormData(prev => ({ ...prev, password: value, passwordError: "" }))} />
+
+        {/* -------- Next button */}
+        <Button variant='authButton' loading={loading} type="submit">
+          Next
+        </Button>
+
+        {/* -------- Or Divider */}
+        <OrDivider />
+
+        {/* -------- Social button */}
+        <SocialButtons />
+
+      </form>
+    </div>
+  );
+};
+
+export default SignIn;
