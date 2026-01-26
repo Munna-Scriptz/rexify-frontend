@@ -4,7 +4,7 @@ import { Stepper } from '../utils/Stepper';
 import SocialButtons from '../components/signUp/SocialButtons';
 import { EmailField, InfoField, PasswordField } from '../components/signUp/InputFields';
 import Header from '../components/signUp/Header';
-import OrDivider from '../helpers/OrDivider';
+import OrDivider from '../components/signUp/OrDivider';
 import { IsValidEmail } from '../utils/Validations';
 
 const SignUp = () => {

@@ -3,12 +3,11 @@ import Button from '../ui/Button';
 import SocialButtons from '../components/signUp/SocialButtons';
 import { EmailField, SinglePasswordField } from '../components/signUp/InputFields';
 import Header from '../components/signUp/Header';
-import OrDivider from '../helpers/OrDivider';
 import { IsValidEmail } from '../utils/Validations';
 import { Link } from 'react-router';
+import OrDivider from '../components/signUp/OrDivider';
 
 const SignIn = () => {
-  const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [rememberMe, setRememberMe] = useState(false);
 

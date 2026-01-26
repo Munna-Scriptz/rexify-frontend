@@ -3,6 +3,7 @@ import logo from '../../assets/Logo.png'
 import { Link, NavLink } from 'react-router'
 import { FiHeart } from 'react-icons/fi'
 import { PiUser } from 'react-icons/pi'
+import SearchField from './SearchField'
 
 const Navbar = () => {
 
@@ -48,7 +49,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav id='navbar' className={`py-3 sticky top-0 duration-300 z-10 group hover:bg-surface ${isNavbarWhite && 'shadow'}`}>
+            <nav id='navbar' className={`py-3 sticky top-0 duration-300 z-50 group hover:bg-surface ${isNavbarWhite && 'shadow'}`}>
                 <div className="container">
                     <div id='Navbar-Row' className='flex items-center justify-between text-white'>
                         {/* ------------ Image  */}
@@ -100,6 +101,8 @@ const Navbar = () => {
 
                     </div>
                 </div>
+        <SearchField />
+
             </nav>
         </>
     )
