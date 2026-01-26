@@ -6,8 +6,18 @@ import { PiUser } from 'react-icons/pi'
 import SearchField from './SearchField'
 
 const Navbar = () => {
-
     const [isNavbarWhite, setIsNavbarWhite] = useState(false);
+
+    const [search, setSearch] = useState(false);
+
+    useEffect(() => {
+        if (search) {
+            setIsNavbarWhite(true);
+        } else {
+            setIsNavbarWhite(false);
+        }
+    }, [search]);
+
     useEffect(() => {
         let lastScrollY = window.pageYOffset;
         const navbar = document.getElementById("navbar");
@@ -49,7 +59,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav id='navbar' className={`py-3 sticky top-0 duration-300 z-50 group hover:bg-surface ${isNavbarWhite && 'shadow'}`}>
+            <nav id='navbar' className={`py-3 sticky top-0 duration-300 z-50 group hover:bg-surface ${isNavbarWhite && 'shadow bg-white'}`}>
                 <div className="container">
                     <div id='Navbar-Row' className='flex items-center justify-between text-white'>
                         {/* ------------ Image  */}
@@ -68,13 +78,13 @@ const Navbar = () => {
                         {/* ------------ NavButtons  */}
                         <div className={`border-l group-hover:border-text-primary/40 ${isNavbarWhite && 'border-text-primary/40'} border-gray-300 pl-3 flex items-center gap-2 `}>
                             {/* ------- Search  */}
-                            <div className='flex items-center rounded-2xl relative'>
-                                <label htmlFor='search' className={`w-8 h-8 bg-transparent cursor-pointer group-hover:bg-text-muted/20 flex duration-300 items-center justify-center rounded-full absolute left-0`}>
+                            <div onClick={() => {setSearch(!search)}} className='flex items-center rounded-2xl relative cursor-pointer'>
+                                <label htmlFor='search' className={`w-8 h-8 pointer-events-none bg-transparent cursor-pointer group-hover:bg-text-muted/20 flex duration-300 items-center justify-center rounded-full absolute left-0`}>
                                     <svg className={`w-6 group-hover:text-text-primary ${isNavbarWhite && 'text-text-primary'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M9.864 3.081A1.56 1.56 0 0 0 9 4.471c0 .275.079.553.215.799a6 6 0 1 0 7.66 6.948a.5.5 0 0 1 .105.183c.235.743.49 1.61 1.418 1.647a8 8 0 0 1-1.126 1.919l4.426 4.317a1 1 0 0 1-1.396 1.432l-4.46-4.348A8 8 0 1 1 9.864 3.081M18.484 8a.3.3 0 0 1 .285.201l.25.766a1.58 1.58 0 0 0 .999.998l.765.248l.015.004a.304.304 0 0 1 .146.46a.3.3 0 0 1-.146.11l-.765.248a1.58 1.58 0 0 0-.999.998l-.249.766a.303.303 0 0 1-.57 0l-.25-.766a1.58 1.58 0 0 0-.998-1.002l-.765-.248a.304.304 0 0 1-.146-.46a.3.3 0 0 1 .146-.11l.765-.248a1.58 1.58 0 0 0 .984-.998L18.2 8.2a.3.3 0 0 1 .284-.2m-4.011-8a.545.545 0 0 1 .512.363l.449 1.376a2.84 2.84 0 0 0 1.797 1.797l1.378.447l.028.007a.55.55 0 0 1 .363.514a.54.54 0 0 1-.363.513l-1.378.447A2.84 2.84 0 0 0 15.46 7.26l-.447 1.376L15 8.67a.545.545 0 0 1-1.014-.034L13.54 7.26a2.84 2.84 0 0 0-1.798-1.804l-1.378-.447A.55.55 0 0 1 10 4.496a.54.54 0 0 1 .363-.513l1.378-.447A2.84 2.84 0 0 0 13.5 1.773l.012-.034l.447-1.376A.55.55 0 0 1 14.473 0"></path>
                                     </svg>
                                 </label>
-                                <input className={`w-30 pl-10 h-8 outline-none rounded-full hover:bg-text-muted/20 group-hover:placeholder:text-text-primary ${isNavbarWhite && 'placeholder:text-text-primary'} appearance-none duration-300 [&::-webkit-search-cancel-button]:appearance-none`} type="search" id='search' name='search' aria-label='search' placeholder='Search' />
+                                <input className={`w-30 read pl-10 h-8 outline-none rounded-full hover:bg-text-muted/20 group-hover:placeholder:text-text-primary ${isNavbarWhite && 'placeholder:text-text-primary'} appearance-none duration-300 [&::-webkit-search-cancel-button]:appearance-none cursor-pointer`} readOnly type="search" id='search' name='search' aria-label='search' placeholder='Search' />
                             </div>
                             {/* --------- Cart  */}
                             <div className={`w-8 h-8 flex items-center justify-center hover:bg-text-muted/30 group-hover:text-text-primary ${isNavbarWhite && 'text-text-primary'} rounded-full cursor-pointer relative`}>
@@ -101,9 +111,11 @@ const Navbar = () => {
 
                     </div>
                 </div>
-        <SearchField />
+
+                {/* -------------- Search Field ------------ */}
 
             </nav>
+            {search && <SearchField close={setSearch} />}
         </>
     )
 }
